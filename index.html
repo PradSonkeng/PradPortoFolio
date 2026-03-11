@@ -16,8 +16,8 @@
     <link rel="manifest" href="favicon/site.webmanifest" />
     <!--end-icone-->
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark border-bottom sticky-top shadow-sm", style="background: linear-gradient(to right, #06064F, #4411BD, #06064F);">
+<body id="themeBody">
+    <nav id="navbar" class="navbar navbar-expand-lg border-bottom sticky-top shadow-sm">
         <div class="container">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
                 <img src="image/logo.jpeg" alt="le logo" class="me-2" style="border-radius: 50px; width: 50px; height: 50px;">
@@ -43,6 +43,11 @@
                     <li class="navbar-item active">
                         <a href="contact.html" class="nav-link"><i class="fa-solid fa-address-book me-2" style="font-size: 1em;"></i>Contacts</a>
                     </li>
+                    <li class="navbar-item ms-3">
+                        <button id="themeToggle" class="btn btn-sm" title="Basculer le mode sombre/clair">
+                            <i class="fa-solid fa-sun" id="themeIcon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -52,13 +57,13 @@
         <section id="hero" class="hero-section d-flex align-items-center">
             <div class="container text-center">
                 <h1 class="moi mt-5  fw-bold fs-6 fs-md-3">
-                    Je me nomme <strong class="vague  p-3 d-inline-block ">SONKENG KENFACK HYMELE PRAD</strong>
+                    Je me nomme <strong class="vague border-vague-wrapper p-3 d-inline-block">SONKENG KENFACK HYMELE PRAD</strong>
                 </h1>
             </div>
         </section>
     </div>
     
-    <footer class="pt-5 pd-4" style="background: linear-gradient(to right, #06064F, #4411BD, #06064F);">
+    <footer class="pt-5 pb-4">
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 mb-4 col-xl-3 mx-auto ">
@@ -103,7 +108,7 @@
                                 <a href="https://www.facebook.com/share/1CZPJ2wc7y/?mibextid=wwXIfr" class="btn-floating btn-sm" style="font-size: 18px;"><i class="fa-brands fa-square-facebook"></i></a>
                             </li>
                         </ul>
-                    </div>  <i class="fa-brands fa-square-linkedin"></i>
+                    </div>
                 </div>
             </div>
         </div>

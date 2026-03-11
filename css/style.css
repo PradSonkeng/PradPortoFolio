@@ -1,96 +1,239 @@
-body{
+/* =========================================
+   Variables CSS — Thèmes clair et sombre
+   ========================================= */
+:root {
+    --bg-color:       #ffffff;
+    --text-color:     #333333;
+    --navbar-bg:      linear-gradient(to right, #06064F, #4411BD, #06064F);
+    --navbar-text:    #ffffff;
+    --footer-bg:      linear-gradient(to right, #06064F, #4411BD, #06064F);
+    --footer-text:    rgba(255, 255, 255, 0.85);
+    --card-bg:        #ffffff;
+    --card-border:    #e0e0e0;
+    --rainbow:        linear-gradient(to right, #0d6efd, #6610f2, #6f42c1, #d63384, #dc3545, #0d6efd);
+}
+
+body.dark-theme {
+    --bg-color:       #1a1a1a;
+    --text-color:     #e0e0e0;
+    --navbar-bg:      linear-gradient(to right, #0a0a2e, #16213e, #0f3460);
+    --navbar-text:    #e0e0e0;
+    --footer-bg:      linear-gradient(to right, #050514, #0d0930, #050514);
+    --footer-text:    rgba(255, 255, 255, 0.7);
+    --card-bg:        #2d2d2d;
+    --card-border:    #444444;
+}
+
+/* =========================================
+   Base
+   ========================================= */
+body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* =========================================
+   Navbar
+   ========================================= */
+#navbar {
+    background: var(--navbar-bg) !important;
+    transition: background 0.3s ease;
+}
 
-.navbar-item:hover {
-    color: #d8fd02;
-    border-color: #ffee00;
-    text-shadow: 
-    0 0 5px #d8fd02,
-    0 0 15px #ffee00,
-    0 0 30px #ffee00;
+#navbar .nav-link,
+#navbar .navbar-brand span {
+    color: var(--navbar-text) !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-item:hover .nav-link {
+    color: #d8fd02 !important;
+    text-shadow:
+        0 0 5px #d8fd02,
+        0 0 15px #ffee00,
+        0 0 30px #ffee00;
     transform: scale(1.1);
 }
 
+#themeToggle {
+    background: transparent;
+    border: none;
+    color: var(--navbar-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    padding: 0.25rem 0.5rem;
+}
+
+#themeToggle:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================
+   Animation arc-en-ciel
+   ========================================= */
+@keyframes wave-animation {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
 .moi .vague {
-    
-    background: linear-gradient( to right , #0d6efd, #6610f2, #6f42c1, #d63384, #dc3545, #0d6fed);
+    background: var(--rainbow);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: wave-animation 4s linear infinite;
-
 }
 
-
+/* Cadre arc-en-ciel animé via pseudo-élément */
 .moi .border-vague-wrapper {
-    
-    
-    border-image-source:
-        linear-gradient( to right , #0d6efd, #6610f2, #6f42c1, #d63384, #dc3545, #0d6fed);
-    border-image-slice: 1;
-    
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(13, 110, 253, 0.4);
+    z-index: 0;
+}
 
+.moi .border-vague-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 12px;
+    background: var(--rainbow);
+    background-size: 200% auto;
     animation: wave-animation 4s linear infinite;
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
-@keyframes wave-animation {
-    0% {background-position: 0% center;}
-    100% {background-position: 200% center;}
-}
-
+/* =========================================
+   Footer
+   ========================================= */
 footer {
     margin-top: auto;
+    background: var(--footer-bg) !important;
+    color: var(--footer-text);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.rounded:hover {
-    color: #fff;
-    border-color: #00d2ff;
-    text-shadow: 
-    0 0 5px #fff,
-    0 0 15px #00d2ff,
-    0 0 30px #00d2ff;
-    transform: scale(1.05);
-}
-
+/* =========================================
+   Utilitaires
+   ========================================= */
 .highlight {
     color: #00d2ff;
     font-weight: bold;
 }
 
 .autre-item {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-text);
+    transition: color 0.2s ease;
 }
 .autre-item:hover {
-    color: #fff;
+    color: #ffffff;
 }
+
 .p-item:hover {
     transform: scale(1.1);
 }
 
-.btn-sm {
-    color:#263033;
+.rounded:hover {
+    color: #fff;
+    border-color: #00d2ff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #00d2ff,
+        0 0 30px #00d2ff;
+    transform: scale(1.05);
 }
-.btn-sm:hover {
-    color:#111111;
-}
+
 .list-inline-item:hover {
     transform: scale(1.5);
 }
 
-@media (max-width : 768px) {
+/* =========================================
+   Thème sombre — surcharges Bootstrap
+   ========================================= */
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body.dark-theme .form-control::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .form-control:focus,
+body.dark-theme .form-select:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: #4411BD;
+    box-shadow: 0 0 0 0.25rem rgba(68, 17, 189, 0.25);
+}
+
+body.dark-theme .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body.dark-theme .list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body.dark-theme .list-group-item:hover {
+    background-color: #3d3d3d;
+}
+
+body.dark-theme .table {
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body.dark-theme .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .alert {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body.dark-theme .btn-outline-primary {
+    color: #7b68ee;
+    border-color: #7b68ee;
+}
+
+body.dark-theme .btn-outline-primary:hover {
+    background-color: #7b68ee;
+    border-color: #7b68ee;
+    color: #ffffff;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 768px) {
     footer .paragraphe {
-        size:1px;
+        font-size: 0.85rem;
     }
     .text-uppercase {
         font-size: 1rem;
-        size: 2px;
     }
 }
