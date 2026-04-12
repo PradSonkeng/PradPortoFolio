@@ -1,3 +1,16 @@
+:root {
+    --bg: #102030;
+    --bg2: #203040;
+    --flou: blur(10px);
+    --transp: rgba(255, 255, 255, 0.034);
+    --color: #ffffff;
+}
+[data-theme="light"] {
+    --bg: #b8babd;
+    --bg2: #c9cdd1;  
+    --color: #000000;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -5,17 +18,27 @@ body{
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
+    background-color: var(--bg);
+    
 }
-
-
+.navbar {
+    background: var(--transp);
+    backdrop-filter: var(--flou);
+    
+}
 .navbar-item:hover {
-    color: #d8fd02;
     border-color: #ffee00;
     text-shadow: 
     0 0 5px #d8fd02,
     0 0 15px #ffee00,
     0 0 30px #ffee00;
     transform: scale(1.1);
+}
+.navbar-item #themeBtn{
+    color: var(--color);
+}
+[data-theme="light"] .navbar-item #themeBtn {
+    color: var(--color);
 }
 
 .moi .vague {
@@ -48,6 +71,8 @@ body{
 
 footer {
     margin-top: auto;
+    background: var(--transp);
+    backdrop-filter: var(--flou);
 }
 
 .rounded:hover {
