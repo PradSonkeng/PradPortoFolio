@@ -117,6 +117,7 @@ nav > button {
 }
 
 /*========== SECTION HERO ==========*/
+/*----- VAGUE NAME -----*/
 .moi {
     color: var(--color)
 }
@@ -149,10 +150,113 @@ nav > button {
     100% {background-position: 200% center;}
 }
 
-/*----- Photo Hero -----*/
+/*----- HERO PHOTO -----*/
 .hero-photo-wrap {
+    width: 320px;
+    height: 320px;
     position: relative;
-    animation: fadeUp 0.8s 0.3s ease both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-photo-ring {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.15) 0%, transparent 70%);
+    box-shadow: 0 0 60px rgba(13, 110, 253, 0.3),
+                inset 0 0 40px rgba(255,255,255,0.1);
+    transition: transform 0.4s ease;
+}
+
+.hero-photo-ring:hover {
+    transform: scale(1.05);
+}
+
+.hero-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid rgba(255,255,255,0.9);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4),
+                0 0 0 12px var(--bg2);
+    z-index: 2;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.hero-photo-ring:hover .hero-img {
+    transform: scale(1.08);
+}
+/*----- ORBITES -----*/
+.orbit-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.orbit-icon {
+    position: absolute;
+    font-size: 28px;
+    color: var(--color);
+    opacity: 0.85;
+    text-shadow: 0 0 10px currentColor;
+    animation: orbit 25s linear infinite;
+    --radius: 160px;
+    z-index: 1;
+}
+
+.orbit-icon:hover {
+    color: #00d2ff;
+    transform: scale(1.4) !important;
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Animation orbitale */
+@keyframes orbit {
+    from { 
+        transform: rotate(0deg) translateX(var(--radius)) rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg); 
+    }
+}
+
+/* Répartition des icônes avec décalage */
+.orbit-icon:nth-child(1)  { animation-duration: 28s; }
+.orbit-icon:nth-child(2)  { animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(3)  { animation-duration: 26s; }
+.orbit-icon:nth-child(4)  { animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(5)  { animation-duration: 28s; }
+.orbit-icon:nth-child(6)  { animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(7)  { animation-duration: 26s; }
+.orbit-icon:nth-child(8)  { animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(9)  { animation-duration: 28s; }
+.orbit-icon:nth-child(10)  { animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(11)  { animation-duration: 26s; }
+.orbit-icon:nth-child(12)  { animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(13)  { animation-duration: 28s; }
+.orbit-icon:nth-child(14)  { animation-duration: 32s; animation-direction: reverse; }
+
+.orbit-icon[style*="--i:"] {
+    animation-delay: calc(var(--i) * -1.8s);
 }
 
 /*========== SECTION FOOTER ==========*/
@@ -251,5 +355,34 @@ hr {
     .text-uppercase {
         font-size: 1rem;
         size: 2px;
+    }
+}
+@media (max-width: 992px) {
+    .hero-photo-wrap {
+        width: 260px;
+        height: 260px;
+    }
+    .hero-photo {
+        width: 180px;
+        height: 180px;
+    }
+    .orbit-icon {
+        font-size: 22px;
+        --radius: 130px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-photo-wrap {
+        width: 220px;
+        height: 220px;
+    }
+    .hero-photo {
+        width: 150px;
+        height: 150px;
+    }
+    .orbit-icon {
+        font-size: 18px;
+        --radius: 110px;
     }
 }
