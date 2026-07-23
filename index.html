@@ -1,9 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKHP.PortoFolio</title>
+    <title>SKHP | Portfolio - Sonkeng Kenfack HymeLe Prad</title>
+    <!-- Meta Description-->
+    <meta name="description" content="SKHP | Portfolio - Sonkeng Kenfack Hymele Prad
+Tout le nécessaire sur moi. Apprenant en Data Sciene et Développeur Web passionné basé à Yaoundé. Découvrez mon parcours, mes projets et mes compétences.">
+
+    <!-- HYDRATATION PRÉCOCE (avant tout CSS/JS) -->
+    <script>
+        // Appliquer le thème immédiatement pour éviter FOUC
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Langue (pour <html lang>)
+            const savedLang = localStorage.getItem('lng') || 'fr';
+            document.documentElement.setAttribute('lang', savedLang);
+        })();
+    </script>
+
     <!-- i18next -->
     <script src="https://cdn.jsdelivr.net/npm/i18next@26.0.5/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.7.0/i18nextHttpBackend.min.js"></script>
@@ -40,7 +57,7 @@
                         <a href="connaissances.html" class="nav-link" data-translate="true"><i class="fa-solid fa-brain me-2" style=" font-size: 1em;"></i>Connaissances</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="parcourt.html" class="nav-link" data-translate="true"><i class="fa-solid fa-road me-2" style=" font-size: 1em;"></i>Parcours</a>
+                        <a href="parcours.html" class="nav-link" data-translate="true"><i class="fa-solid fa-road me-2" style=" font-size: 1em;"></i>Parcours</a>
                     </li>
                     <li class="nav-item active">
                         <a href="travaux.html" class="nav-link" data-translate="true"><i class="fa-solid fa-clipboard-check me-2" style="font-size: 1em;"></i>Travaux</a>
@@ -97,7 +114,7 @@
                         <span class="px-2 fw-bold py-1" style="color: #0aeff7; background-color: #ff0505; transform: translateY(5px);">P</span>
                     </h5>
                     <p class="fs-6 fs-md-2 paragraphe rounded">
-                        <strong data-translate="true"">Tout le naicessaire sur moi. N'hésitez pas à vous servire et à <span class="highlight">PARTAGER</span>. Merci!</strong> 
+                        <strong data-translate="true"">Tout le nécessaire sur moi. N'hésitez pas à vous servire et à <span class="highlight">PARTAGER</span>. Merci!</strong> 
                     </p>
                 </div>
                 <div class="right col-md-3 col-lg-3 col-xl-3 mx-auto ">
