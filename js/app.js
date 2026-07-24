@@ -145,3 +145,14 @@ function initApp() {
 // Lancement quand le DOM est prêt
 document.addEventListener('DOMContentLoaded', initApp);
 
+function updateOrbitRadius() {
+    const wrap = document.querySelector('.hero-photo-wrap');
+    if (!wrap) return;
+    const size = wrap.offsetWidth;
+    const radius = size * 0.5 + 20; // ~ moitié + marge
+    document.querySelector('.orbit-container').style.setProperty('--orbit-radius', `${radius}px`);
+}
+
+window.addEventListener('resize', updateOrbitRadius);
+document.addEventListener('DOMContentLoaded', updateOrbitRadius);
+

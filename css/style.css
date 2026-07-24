@@ -154,10 +154,12 @@ nav > button {
 .hero-photo-wrap {
     width: 320px;
     height: 320px;
+    aspect-ratio: 1 / 1;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
 }
 
 .hero-photo-ring {
@@ -169,6 +171,7 @@ nav > button {
     box-shadow: 0 0 60px rgba(13, 110, 253, 0.3),
                 inset 0 0 40px rgba(255,255,255,0.1);
     transition: transform 0.4s ease;
+    overflow: hidden;
 }
 
 .hero-photo-ring:hover {
@@ -180,14 +183,15 @@ nav > button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 220px;
-    height: 220px;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
     border-radius: 50%;
     overflow: hidden;
     border: 8px solid rgba(255,255,255,0.9);
     box-shadow: 0 10px 40px rgba(0,0,0,0.4),
                 0 0 0 12px var(--bg2);
     z-index: 2;
+    aspect-ratio: 1 / 1;
 }
 
 .hero-img {
@@ -209,6 +213,7 @@ nav > button {
     height: 100%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    --orbit-radius: 160px;
 }
 
 .orbit-icon {
@@ -218,8 +223,10 @@ nav > button {
     opacity: 0.85;
     text-shadow: 0 0 10px currentColor;
     animation: orbit 25s linear infinite;
-    --radius: 160px;
+    --radius: var(--orbit-radius);
     z-index: 1;
+    left: 50%;
+    top: 50%;
 }
 
 .orbit-icon:hover {
@@ -240,23 +247,24 @@ nav > button {
 }
 
 /* Répartition des icônes avec décalage */
-.orbit-icon:nth-child(1)  { animation-duration: 28s; }
-.orbit-icon:nth-child(2)  { animation-duration: 32s; animation-direction: reverse; }
-.orbit-icon:nth-child(3)  { animation-duration: 26s; }
-.orbit-icon:nth-child(4)  { animation-duration: 30s; animation-direction: reverse; }
-.orbit-icon:nth-child(5)  { animation-duration: 28s; }
-.orbit-icon:nth-child(6)  { animation-duration: 32s; animation-direction: reverse; }
-.orbit-icon:nth-child(7)  { animation-duration: 26s; }
-.orbit-icon:nth-child(8)  { animation-duration: 30s; animation-direction: reverse; }
-.orbit-icon:nth-child(9)  { animation-duration: 28s; }
-.orbit-icon:nth-child(10)  { animation-duration: 32s; animation-direction: reverse; }
-.orbit-icon:nth-child(11)  { animation-duration: 26s; }
-.orbit-icon:nth-child(12)  { animation-duration: 30s; animation-direction: reverse; }
-.orbit-icon:nth-child(13)  { animation-duration: 28s; }
-.orbit-icon:nth-child(14)  { animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(1)  { --angle: 0deg; animation-duration: 28s; }
+.orbit-icon:nth-child(2)  { --angle: 25deg; animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(3)  { --angle: 25deg; animation-duration: 26s; }
+.orbit-icon:nth-child(4)  { --angle: 30deg; animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(5)  { --angle: 25deg; animation-duration: 28s; }
+.orbit-icon:nth-child(6)  { --angle: 30deg; animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(7)  { --angle: 25deg; animation-duration: 26s; }
+.orbit-icon:nth-child(8)  { --angle: 30deg; animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(9)  { --angle: 25deg; animation-duration: 28s; }
+.orbit-icon:nth-child(10)  { --angle: 30deg; animation-duration: 32s; animation-direction: reverse; }
+.orbit-icon:nth-child(11)  { --angle: 25deg; animation-duration: 26s; }
+.orbit-icon:nth-child(12)  { --angle: 30deg; animation-duration: 30s; animation-direction: reverse; }
+.orbit-icon:nth-child(13)  { --angle: 25deg; animation-duration: 28s; }
+.orbit-icon:nth-child(14)  { --angle: 30deg; animation-duration: 32s; animation-direction: reverse; }
 
 .orbit-icon[style*="--i:"] {
     animation-delay: calc(var(--i) * -1.8s);
+    transform: rotate(var(--angle, 0deg)) translateX(var(--radius)) rotate(calc(-1 * var(--angle, 0deg)));
 }
 
 /*========== SECTION FOOTER ==========*/
@@ -362,9 +370,12 @@ hr {
         width: 260px;
         height: 260px;
     }
+    .orbit-container {
+        --orbit-radius: 130px;
+    }
     .hero-photo {
-        width: 180px;
-        height: 180px;
+        width: calc(100% - 80px);
+        height: calc(100% - 80px);
     }
     .orbit-icon {
         font-size: 22px;
@@ -377,12 +388,18 @@ hr {
         width: 220px;
         height: 220px;
     }
+    .orbit-container {
+        --orbit-radius: 110px;
+    }
     .hero-photo {
-        width: 150px;
-        height: 150px;
+        width: calc(100% - 70px);
+        height: calc(100% - 70px);;
     }
     .orbit-icon {
         font-size: 18px;
         --radius: 110px;
+    }
+    .orbit-container {
+        --orbit-radius: 190px;
     }
 }
