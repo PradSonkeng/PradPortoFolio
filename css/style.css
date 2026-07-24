@@ -273,6 +273,7 @@ nav > button {
 }
 
 .presentation-content {
+    color: var(--color);
     text-align: justify;
     font-size: 1.15rem;
 }
