@@ -266,6 +266,40 @@ nav > button {
     transform: rotate(var(--angle, 0deg)) translateX(var(--radius)) rotate(calc(-1 * var(--angle, 0deg)));
 }
 
+/* ====================== SECTION PRÉSENTATION ====================== */
+.presentation-section {
+    color: var(--color);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.presentation-content {
+    text-align: justify;
+    font-size: 1.15rem;
+}
+
+.presentation-content p {
+    margin-bottom: 1.8rem;
+}
+
+.presentation-section .border {
+    transition: all 0.3s ease;
+}
+
+.presentation-section .border:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-color: #0d6efd !important;
+}
+
+/* Séparation visuelle avec le hero */
+#hero {
+    margin-bottom: 0;
+}
+
+.presentation-section {
+    margin-top: -2px; /* Pour éviter un petit espace blanc */
+}
+
 /*========== SECTION FOOTER ==========*/
 footer {
     margin-top: auto;
