@@ -181,11 +181,14 @@ nav > button {
     z-index: 2;
 }
 
+.hero-photo img,
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    border-radius: 50%;
+    display: block;
 }
 
 .hero-photo-ring:hover .hero-img {
@@ -258,14 +261,6 @@ nav > button {
 .presentation-section {
     color: var(--color);
     border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.presentation-section .slice-bar {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient( to right , #0d6efd, #6610f2, #6f42c1, #d63384, #dc3545, #0d6fed);
-    border-radius: 2px;
-    animation: wave-animation 4s linear infinite;
 }
 
 .presentation-content {
