@@ -82,76 +82,160 @@ Tout le nécessaire sur moi. Apprenant en Data Sciene et Développeur Web passio
                     Documentation
                 </h1>
                 <p class="lead mt-3" style="color: var(--part-color);" data-i18n="documentation.subtitle">
-                    Mon CV et documents importants
+                    Mon CV, compétences et certifications
                 </p>
                 <div class="mx-auto mt-3" style="width: 50%; height: 1px; background: linear-gradient(to right, #0d6efd, #6610f2); "></div>
             </div>
-    
-            <div class="row g-4 justify-content-center">
-    
-                <!-- Carte CV -->
-                <div class="col-md-6 col-lg-5">
-                    <div class="doc-card p-4 h-100 text-center">
-                        <div class="doc-icon mb-3">
-                            <i class="fa-solid fa-file-pdf"></i>
-                        </div>
-                        <h4 style="color: var(--color);" class="mb-2">Curriculum Vitae</h4>
-                        <p style="color: var(--part-color);" class="mb-4">
-                            Téléchargez mon CV au format PDF
-                        </p>
-                        <a href="documents/CV_Sonkeng_Kenfack.pdf" 
-                           target="_blank" 
-                           class="btn btn-primary px-4 py-2"
-                           download>
-                            <i class="fa-solid fa-download me-2"></i> Télécharger le CV    
-                        </a>
-                    </div>
-                </div>
-    
-                <!-- Carte Portfolio / Autres documents -->
-                <div class="col-md-6 col-lg-5">
-                    <div class="doc-card p-4 h-100 text-center">
-                        <div class="doc-icon mb-3">
-                            <i class="fa-solid fa-folder-open"></i>
-                        </div>
-                        <h4 style="color: var(--color);" class="mb-2">Autres documents</h4>
-                        <p style="color: var(--part-color);" class="mb-4">
-                            Certificats, attestations et documents complémentaires
-                        </p>
-                        <a href="#" class="btn btn-outline-primary px-4 py-2">
-                            <i class="fa-solid fa-eye me-2"></i> Voir les documents
-                        </a>
-                    </div>
-                </div>
-    
+            
+            <div class="col-md-6 col-lg-5">
+                <a href="documents/CV_Sonkeng_Kenfack.pdf" 
+                    target="_blank" 
+                    class="btn btn-primary px-4 py-2"
+                    download>
+                    <i class="fa-solid fa-download me-2"></i> Télécharger le CV    
+                </a>
             </div>
-    
-            <!-- Aperçu rapide du profil -->
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto">
-                    <div class="profile-summary p-4 p-md-5">
-                        <div class="row align-items-center">
-                            <div class="col-md-8">
-                                <h3 style="color: var(--color);" class="mb-3">Sonkeng Kenfack HymeLe Prad</h3>
-                                <p style="color: var(--part-color);" class="mb-3">
-                                    Apprenant en <strong>Data Science</strong> et <strong>Développeur Web</strong> passionné, 
-                                    basé à Yaoundé. Je combine créativité technique et rigueur analytique pour concevoir 
-                                    des solutions innovantes.
-                                </p>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="info-badge"><i class="fa-solid fa-envelope me-1"></i> braedsonkeng@gmail.com</span>    
-                                    <span class="info-badge"><i class="fa-solid fa-phone me-1"></i> +237 658 130 830</span>
-                                    <span class="info-badge"><i class="fa-solid fa-location-dot me-1"></i> Yaoundé, Cameroun</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mt-4 mt-md-0">
-                                <a href="contact.html" class="btn btn-primary px-4 py-2">
-                                    <i class="fa-solid fa-paper-plane me-2"></i> Me contacter
-                                </a>
-                            </div>
+            
+            <div class="cv-container p-4 p-md-5 mb-5">
+            
+                <!-- En-tête CV -->
+                <div class="cv-header text-center mb-5">
+                    <h2 style="color: var(--color);" class="fw-bold mb-1">SONKENG KENFACK HYMELE PRAD</h2>
+                    <p style="color: var(--part-color);" class="mb-2">
+                        Apprenant en Data Science & Développeur Web
+                    </p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3" style="color: var(--part-color); font-size: 0.95rem;">
+                        <span><i class="fa-solid fa-envelope me-1"></i> braedsonkeng@gmail.com</span>
+                        <span><i class="fa-solid fa-phone me-1"></i> +237 658 130 830</span>
+                        <span><i class="fa-solid fa-location-dot me-1"></i> Yaoundé, Cameroun</span>
+                    </div>
+                </div>
+
+                <!-- Profil -->
+                <div class="cv-section mb-4">
+                    <h4 class="cv-title">Profil</h4>
+                    <p style="color: var(--part-color);">
+                        Passionné par la Data Science et le Développement Web, je combine créativité technique 
+                        et rigueur analytique. Je conçois des solutions innovantes allant de sites web modernes 
+                        à l’analyse de données et la mise en place de modèles prédictifs.
+                    </p>
+                </div>
+
+                <!-- Compétences -->
+                <div class="cv-section mb-4">
+                    <h4 class="cv-title">Compétences techniques</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="cv-list">
+                                <li><strong>Développement Web :</strong> HTML5, CSS3, JavaScript, Bootstrap</li>
+                                <li><strong>Data Science :</strong> Python, Pandas, NumPy, Matplotlib, Seaborn</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="cv-list">
+                                <li><strong>Outils :</strong> Git, GitHub, VS Code, Jupyter</li>
+                                <li><strong>Autres :</strong> SQL (bases), Excel, Algorithmique</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <!-- Formation -->
+                <div class="cv-section mb-4">
+                    <h4 class="cv-title">Formation</h4>
+                    <div class="cv-item mb-3">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <strong style="color: var(--color);">Apprentissage Data Science & Développement Web</strong>
+                            <span style="color: var(--part-color);">2024 – Présent</span>
+                        </div>
+                        <p style="color: var(--part-color);" class="mb-0">Formation intensive autodidacte et projets pratiques</p>
+                    </div>
+                    <div class="cv-item">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <strong style="color: var(--color);">Bases en Informatique et Mathématiques</strong>
+                            <span style="color: var(--part-color);">2022 – 2023</span>
+                        </div>
+                        <p style="color: var(--part-color);" class="mb-0">Acquisition des fondements algorithmiques et analytiques</p>
+                    </div>
+                </div>
+
+                <!-- Projets -->
+                <div class="cv-section mb-4">
+                    <h4 class="cv-title">Projets réalisés</h4>
+                    <ul class="cv-list">
+                        <li><strong>Portfolio Personnel</strong> – Site responsive avec thème sombre/clair et animations</li>
+                        <li><strong>SPACELearn</strong> – Plateforme d’apprentissage en ligne</li>
+                        <li><strong>Songho</strong> – Site web personnel / vitrine</li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="cv-section">
+                    <h4 class="cv-title">Soft Skills</h4>
+                    <p style="color: var(--part-color);">
+                        Autonomie • Curiosité • Esprit d’analyse • Travail en équipe • Communication • Apprentissage continu
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: var(--color);">Certifications</h2>
+                <p style="color: var(--part-color);">Mes attestations et certificats</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Certification 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="cert-card">
+                        <div class="cert-preview">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-certificate fa-3x mb-2"></i>
+                                <span>Certification Python</span>
+                            </div>
+                        </div>
+                        <div class="cert-info p-3">
+                            <h5 style="color: var(--color);">Python for Data Science</h5>
+                            <p style="color: var(--part-color);" class="mb-2">Plateforme / Organisme</p>
+                            <small style="color: var(--part-color);">2024</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="cert-card">
+                        <div class="cert-preview">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-code fa-3x mb-2"></i>
+                                <span>Développement Web</span>
+                            </div>
+                        </div>
+                        <div class="cert-info p-3">
+                            <h5 style="color: var(--color);">Web Development Fundamentals</h5>
+                            <p style="color: var(--part-color);" class="mb-2">Plateforme / Organisme</p>
+                            <small style="color: var(--part-color);">2024</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="cert-card">
+                        <div class="cert-preview">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-chart-line fa-3x mb-2"></i>
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                        <div class="cert-info p-3">
+                            <h5 style="color: var(--color);">Data Analysis with Python</h5>
+                            <p style="color: var(--part-color);" class="mb-2">Plateforme / Organisme</p>
+                            <small style="color: var(--part-color);">2025</small>
+                        </div>
+                    </div>
+                </div>
+
             </div>
     
         </div>
