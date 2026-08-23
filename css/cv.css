@@ -116,6 +116,70 @@ nav > button {
     border-color: var(--color) !important;
 }
 
+
+/* ====================== SECTION DOCUMENTATION ====================== */
+.documentation-section {
+    min-height: 80vh;
+    padding-top: 100px !important;
+    padding-bottom: 80px;
+}
+
+/* Cartes documents */
+.doc-card {
+    background: var(--bg2);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+}
+
+.doc-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.doc-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+/* Résumé profil */
+.profile-summary {
+    background: var(--bg2);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.9rem;
+    background: var(--bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--color);
+}
+
+/* Mode clair */
+[data-theme="light"] .doc-card,
+[data-theme="light"] .profile-summary {
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .info-badge {
+    border-color: rgba(0,0,0,0.1);
+    color: #102030;
+}
+
+
 /*========== SECTION FOOTER ==========*/
 footer {
     margin-top: auto;
