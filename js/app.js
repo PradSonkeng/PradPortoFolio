@@ -156,3 +156,4 @@ function updateOrbitRadius() {
 window.addEventListener('resize', updateOrbitRadius);
 document.addEventListener('DOMContentLoaded', updateOrbitRadius);
 
+
