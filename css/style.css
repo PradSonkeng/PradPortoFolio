@@ -142,11 +142,18 @@ nav > button {
 .hero-photo-wrap {
     width: 320px;
     height: 320px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
     position: relative;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
     justify-content: center;
+    max-width: 100%;
+}
+
+.right .col-lg-5 {
+    flex: 0 0 auto;
+    width: auto;
     max-width: 100%;
 }
 
@@ -406,6 +413,8 @@ hr {
     .hero-photo-wrap {
         width: 260px;
         height: 260px;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
     }
     .orbit-container {
         --orbit-radius: 130px;
